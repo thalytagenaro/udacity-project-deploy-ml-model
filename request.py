@@ -18,9 +18,7 @@ data = {
     "native_country": "United-States"
 }
 
-data = {key.replace('_', '-'): [value] for key, value in data.items()}
-
 response = requests.post("https://udacity-project-deploy-ml-model.onrender.com/predict", data=json.dumps(data))
 
-print("status_code", response.status_code)
-print("result", response.json())
+print("Status:", response.status_code)
+print("Result:", response.text)
