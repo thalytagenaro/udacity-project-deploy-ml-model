@@ -61,7 +61,7 @@ async def root():
 @app.post('/predict')
 async def predict(input_data: InputData):
     data = pd.DataFrame(
-        {column: value for column,value in input_data.dict(by_alias=True).items()},
+        {column: value for column, value in input_data.dict(by_alias=True).items()},
         index=[0]
     )
     X, * _ = process_data(
