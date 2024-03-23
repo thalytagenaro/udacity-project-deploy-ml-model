@@ -1,24 +1,23 @@
 import requests
-import json
 
 data = {
-    "age": 39,
-    "workclass": "State-gov",
-    "fnlgt": 77516,
-    "education": "Bachelors",
-    "education_num": 13,
-    "marital_status": "Never-married",
-    "occupation": "Adm-clerical",
+    "age": 31,
+    "workclass": "Private",
+    "fnlgt": 45781,
+    "education": "Masters",
+    "education-num": 14,
+    "marital-status": "Never-married",
+    "occupation": "Prof-specialty",
     "relationship": "Not-in-family",
     "race": "White",
-    "sex": "Male",
-    "capital_gain": 2174,
-    "capital_loss": 0,
-    "hours_per_week": 40,
-    "native_country": "United-States"
+    "sex": "Female",
+    "capital-gain": 14084,
+    "capital-loss": 0,
+    "hours-per-week": 50,
+    "native-country": "United-States"
 }
 
-response = requests.post("https://udacity-project-deploy-ml-model.onrender.com/predict", data=json.dumps(data))
+response = requests.post("https://udacity-project-deploy-ml-model.onrender.com/predict", json=data)
 
 print("Status:", response.status_code)
 print("Result:", response.text)
